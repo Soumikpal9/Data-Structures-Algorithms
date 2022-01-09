@@ -1,0 +1,68 @@
+Problem Description
+Given an array of integers A. If i < j and A[i] > A[j] then the pair (i, j) is called an inversion of A. Find the total number of inversions of A modulo (109 + 7).
+
+
+
+Problem Constraints
+1 <= length of the array <= 100000
+
+1 <= A[i] <= 10^9
+
+
+
+Input Format
+The only argument given is the integer array A.
+
+
+
+Output Format
+Return the number of inversions of A modulo (109 + 7).
+
+
+
+Example Input
+Input 1:
+
+A = [3, 2, 1]
+Input 2:
+
+A = [1, 2, 3]
+
+
+Example Output
+Output 1:
+
+3
+Output 2:
+
+0
+
+
+
+Solution Approach => 
+
+                Brute Force => Find all pairs satisfying the condition and count them.
+
+                Optimised => 
+                            1. Break the array from the middle until it reaches 1 element and start
+                                counting back from the bottom.
+
+                            2.  We need to calculate InversionCount of left half, right half and
+                                between them at every step.
+
+                            3. Return the total of all 3 functions at the top.
+
+                            Logic => InversionCount function will automatically find the count of left half and right half when
+                                     it gets sorted from bottom to up. So to find the sorted list everytime 
+                                     and also to find the InversionCountbetween the 2 lists we will sort the
+                                     list everytime from bottom to up and keep the count.
+
+
+Complexity Analysis => 
+
+                    Time Complexity = O(NlogN)
+
+                    Space Complexity = O(N)
+
+
+This technique is called DIVIDE & CONQUER Algorithm.
