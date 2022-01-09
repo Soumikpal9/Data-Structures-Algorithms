@@ -16,7 +16,7 @@ string Solution::largestNumber(const vector<int> &A){
         X.push_back(to_string(A[i]));
     }
 
-    sort(X.begin, X.end(), comp);
+    sort(X.begin(), X.end(), comp);
 
     string ans="";
     for(int i=0;i<X.size();i++){
