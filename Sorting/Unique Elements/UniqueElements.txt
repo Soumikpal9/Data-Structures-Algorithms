@@ -1,0 +1,93 @@
+Problem Description
+
+You are given an array A of N elements. You have to make all elements unique, to do so in one step you can increase any number by one.
+
+Find the minimum number of steps.
+
+
+
+Problem Constraints
+
+1 <= N <= 105
+1 <= A[i] <= 109
+
+
+
+Input Format
+
+The only argument given is an Array A, having N integers.
+
+
+
+Output Format
+
+Return the Minimum number of steps required to make all elements unique.
+
+
+
+Example Input
+
+Input 1:
+
+ A = [1, 1, 3]
+Input 2:
+
+ A = [2, 4, 5]
+
+
+Example Output
+
+Output 1:
+
+ 1
+Output 2:
+
+ 0
+
+
+Solution Approach => 
+
+                    1. We can insert all the elements and their frequency in a hashmap. Then we can iterate
+                       over the hashmap and if the frequency of an element is greater than 1, then we will 
+                       increase the steps needed as (frequency - 1) and then add that elemnt by 1 and insert 
+                       the added element in the hashmap with the frequency as the previous (frequency - 1).
+                       We will do this until every element in hashmap has frequency as 1.
+
+                       Example - [2, 3, 4, 5, 4, 3]
+                                map = [2,1   3,2,   4,2   5,1]   steps=0
+                                step 1 =>>  map = [2,1   3,1   4,3   5,1]   steps=0+1=1
+                                step 2 =>>  map = [2,1   3,1   4,1   5,3]   steps=1+2=3
+                                step 3 =>>  map = [2,1   3,1   4,1   5,1   6,2]   steps=3+2=5
+                                step 4 =>>  map = [2,1   3,1   4,1   5,1   6,1   7,1]   steps=5+1=6
+
+                       Complexity - 
+                                Time Complexity = O(N)
+
+                                Space Complexity = O(N)
+
+                       Analysis - We can see that as it is using hashmap, it is taking extra space for solving
+                                  it. So, we will try to do this without using extra space.
+
+
+
+                    2. We can sort the array first. Then, we can iterate over the array and check the adjacent 
+                       elements. If they are equalx, we will increase the element by 1 as well as the number 
+                       of steps by 1. If the current element is smaller than the previous one, then we will 
+                       increase the current to a point where it is greater than the previous one and will increase
+                       the number of steps by (previous + 1 - current). 
+
+                       Example - [2, 3, 4, 5, 4, 3]
+                                After sorting = [2, 3, 3, 4, 4, 5]
+                                iteration 1 =>>  3>2 do nothing      steps=0  [2, 3, 3, 4, 4, 5]
+                                iteration 2 =>>  3==3       steps=0+1=1  [2, 3, 4, 4, 4, 5] 
+                                iteration 3 =>>  4==4       steps=1+1=2  [2, 3, 4, 5, 4, 5]
+                                iteration 4 =>>  4<5        steps=2+(5+1-4)=4  [2, 3, 4, 5, 6, 5]
+                                iteration 5 =>>  5<6        steps=4+(6+1-5)=6  [2, 3, 4, 5, 6, 7]
+
+                       Complexity -
+                                Time Complexity = O(NlogN)
+
+                                Space Complexity = O(1)
+
+
+                                
