@@ -1,0 +1,66 @@
+Problem Description
+
+Given an array A of N integers where each value represents number of chocolates in a packet.
+
+i-th can have A[i] number of chocolates.
+
+There are B number students, the task is to distribute chocolate packets following below conditions:
+
+1. Each student gets one packet.
+2. The difference between the number of chocolates in packet with maximum chocolates and packet with minimum chocolates given to the students is minimum.
+Return the minimum difference (that can be achieved) between maximum and minimum number of chocolates distributed.
+
+
+
+Problem Constraints
+
+0 <= N <= 10^5
+1 <= A[i] <= 10^7
+0 <= B <= 10^5
+
+
+Input Format
+
+The first argument contains an integer array A.
+
+The second argument contains an integer B.
+
+
+
+Output Format
+
+Return the minimum difference (that can be achieved) between maximum and minimum number of chocolates distributed.
+
+
+Example Input
+
+Input:
+
+  A : [3, 4, 1, 9, 56, 7, 9, 12]
+  B : 5
+
+
+Example Output
+
+Output:
+
+  6
+
+
+
+Solution Approach => 
+
+                    As we have to take the difference between the minimum and maximum for each of the 
+                    students and return the minimum out of it, hence we need to maintain the minimum from 
+                    all these students cases. So basically we need to sort the array and maintain a subarray
+                    of the size as number of students in which we will keep the difference between the first
+                    and last element of the subarray and keep on updating the minimum of them.
+
+
+Complexity Analysis => 
+
+                    Time Complexity = O(NlogN)
+
+                    Space Complexity = O(1)
+
+                    
