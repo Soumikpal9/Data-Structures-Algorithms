@@ -1,0 +1,70 @@
+Problem Description
+
+Given an array of integers A, sort the array into a wave like array and return it, In other words, arrange the elements into a sequence such that
+
+a1 >= a2 <= a3 >= a4 <= a5…..
+NOTE : If there are multiple answers possible, return the one that's lexicographically smallest.
+
+
+
+Problem Constraints
+
+1 <= len(A) <= 106
+1 <= A[i] <= 106
+
+
+
+Input Format
+
+First argument is an integer array A.
+
+
+
+Output Format
+
+Return an array arranged in the sequence as described.
+
+
+
+Example Input
+
+Input 1:
+
+A = [1, 2, 3, 4]
+Input 2:
+
+A = [1, 2]
+
+
+Example Output
+
+Output 1:
+
+[2, 1, 4, 3]
+Output 2:
+
+[2, 1]
+
+
+Solution Approach => 
+
+                    1. We can simply sort the array and then swap the adjacent elements. Time Complexity
+                       for this will be nlogn.
+
+                    2. More optimisation can be made in O(N) solution but the answer won't be in
+                       lexicographically smaller terms where we will swap adjacent elements only when
+                       -> current element is smaller than previous odd element, swap previous & current.
+                            if(i>0 && A[i-1]>A[i])
+                       -> current element is smaller than next odd element, swap current & next.
+                            if(i<n-1 && A[i]<A[i+1]) 
+                        This is so because we always want to keep the smaller value in the odd place.
+
+
+Complexity Analysis => 
+
+                    Time Complexity = O(NlogN)
+
+                    Space Complexity = O(1)
+
+                    
+
