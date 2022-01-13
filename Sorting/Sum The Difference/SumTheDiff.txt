@@ -1,0 +1,70 @@
+Problem Description
+
+Given an integer array A of size N.
+You have to find all possible non-empty subsequence of the array of numbers and then, for each subsequence, find the difference between the largest and smallest numbers in that subsequence Then add up all the differences to get the number.
+
+As the number may be large, output the number modulo 1e9 + 7 (1000000007).
+
+NOTE: Subsequence can be non-contiguous.
+
+
+
+Problem Constraints
+
+1 <= N <= 10000
+
+1<= A[i] <=1000
+
+
+
+Input Format
+
+First argument is an integer array A.
+
+
+
+Output Format
+
+Return an integer denoting the output.
+
+
+
+Example Input
+
+Input 1:
+
+A = [1, 2]
+Input 2:
+
+A = [1]
+
+
+Example Output
+
+Output 1:
+
+ 1
+Output 2:
+
+ 0
+
+
+
+Solution Approach => 
+
+                    1. Brute Force => Generate all the subsequences and do the sum of (max-min) for all
+                        the subsequences.
+                        Time Complexity = O(N*2^N)
+                        Space Complexity = O(1)
+
+                    2. Optimised using Contribution technique => As we have to deal with max and min 
+                        elements only, so even though order matters in subsequences, if we sort them it 
+                        won't matter in this case. So, we can sort the array first because it will help
+                        us in finding the contribution of a particular element in all the subsequences
+                        for each of max case and min case. And finally we can take the sum as max - min
+                        and return sum.
+                        Time Complexity = O(NlogN)
+                        Space Complexity = O(1)
+
+
+                        
