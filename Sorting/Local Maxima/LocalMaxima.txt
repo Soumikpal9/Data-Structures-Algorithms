@@ -1,0 +1,57 @@
+Problem Description
+
+Given an array of integers A, find and return the peak element in it. An array element is peak if it is NOT smaller than its neighbors.
+
+For corner elements, we need to consider only one neighbor. We ensure that answer will be unique.
+
+NOTE: Users are expected to solve this in O(log(N)) time.
+
+
+
+Problem Constraints
+
+1 <= |A| <= 100000
+
+1 <= A[i] <= 109
+
+
+
+Input Format
+
+The only argument given is the integer array A.
+
+
+
+Output Format
+
+Return the peak element.
+
+
+
+Example Input
+
+Input 1:
+
+A = [1, 2, 3, 4, 5]
+Input 2:
+
+A = [5, 17, 100, 11]
+
+
+
+Solution Approach => 
+
+                    1. Brute Force => We need to find any one local maxima so we can just find the 
+                        maximum of all the elements by traversing the array once.
+
+                        Time Complexity = O(N)
+                        Space Complexity = O(1)
+
+                    2. Optimised => We can use binary search here, where we will find the mid and then
+                        eliminate the left or the right depending on the conditions of a local maxima.
+
+                        Time Complexity = O(logN)
+                        Space Complexity = O(1)
+
+
+                        
