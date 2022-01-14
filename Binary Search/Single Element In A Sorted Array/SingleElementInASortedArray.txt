@@ -1,0 +1,73 @@
+Problem Description
+
+Given a sorted array of integers A where every element appears twice except for one element which appears once, find and return this single element that appears only once.
+
+NOTE: Users are expected to solve this in O(log(N)) time.
+
+
+
+Problem Constraints
+
+1 <= |A| <= 100000
+
+1 <= A[i] <= 10^9
+
+
+
+Input Format
+
+The only argument given is the integer array A.
+
+
+
+Output Format
+
+Return the single element that appears only once.
+
+
+
+Example Input
+
+Input 1:
+
+A = [1, 1, 7]
+Input 2:
+
+A = [2, 3, 3]
+
+
+Example Output
+
+Output 1:
+
+ 7
+Output 2:
+
+ 2
+
+
+
+Solution Approach =>
+
+                    1. Brute Force => Take XOR. After taking XOR of all the elements, we output we will
+                        get will be our desired output because that will be the unique one left.
+
+                        Time Complexity = O(N)
+                        Space Complexity = O(1)
+
+                    2. Optimised => We can take the help of binary search to reduce our search space
+                        and we will go left if mid is odd and will go right if mid is even. This is so
+                        because it has been observed that if a unique element comes in between then the 
+                        first occurence of some duplicate number will be at an odd index on the right 
+                        hand side and will be at an even index on the left hand side. So we are taking 
+                        use of this condition to reduce our search space. And finally we will return at 
+                        a point where the left and the right element just adjacent to mid will not be 
+                        equal to that of mid.
+
+                        Time Complexity = O(logN)
+                        Space Complexity = O(1)
+
+
+                        
+
+                        
