@@ -1,0 +1,76 @@
+Problem Description
+
+Given three positive integers A, B and C.
+
+Any positive integer is magical if it is divisible by either B or C.
+
+Return the Ath magical number. Since the answer may be very large, return it modulo 109 + 7.
+
+
+
+Problem Constraints
+
+1 <= A <= 109
+
+2 <= B, C <= 40000
+
+
+
+Input Format
+
+The first argument given is an integer A.
+
+The second argument given is an integer B.
+
+The third argument given is an integer C.
+
+
+
+Output Format
+
+Return the Ath magical number. Since the answer may be very large, return it modulo 109 + 7.
+
+
+
+Example Input
+
+Input 1:
+
+ A = 1
+ B = 2
+ C = 3
+Input 2:
+
+ A = 4
+ B = 2
+ C = 3
+
+
+Example Output
+
+Output 1:
+
+ 2
+Output 2:
+
+ 6
+
+
+
+Solution Approach => 
+
+                    1. Brute Force => We can iterate from min(a, b) to min(a, b)*n and find the total
+                        multiples at every step and check if the count matches n. Return that element
+                        where the count matches n.
+
+                        Time Complexity = O(N*min(a, b))
+                        Space Complexity = O(1)
+
+                    2. Optimised => We can use the same concept of binary search and use the conditions
+                        accordingly in the same search space and we it will be reduced by that.
+
+                        Time Complexity = O(log(N*min(a, b)))
+                        Space Complexity = O(1)
+
+
+                        
